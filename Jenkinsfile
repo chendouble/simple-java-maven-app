@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine' 
-            args '-v /home/jenkins/.m2:/home/jenkins/.m2' 
-        }
-    }
+    agent { label 'master' }
     stages {
         stage('Build') { 
             steps {
