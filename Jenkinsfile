@@ -1,4 +1,5 @@
 pipeline {
+    agent {
     kubernetes {
         label podlabel
         yaml """
@@ -12,6 +13,7 @@ spec:
     imagePullPolicy: Always
 """
    }
+}
     stages {
         stage('Build') { 
             steps {
